@@ -1,0 +1,17 @@
+<template>
+    <div class="flex h-screen bg-gray-100">
+      <!-- Sidebar -->
+      <Sidebar />
+      
+      <!-- Main Content -->
+      <main class="flex-1 overflow-y-auto">
+        <div class="p-6">
+          <router-view />
+        </div>
+      </main>
+    </div>
+  </template>
+  
+  <script setup>
+  import Sidebar from './Sidebar.vue'
+  </script>
