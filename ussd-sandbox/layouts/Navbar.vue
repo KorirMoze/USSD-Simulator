@@ -1,7 +1,7 @@
 <template>
      <!-- Header -->
     <header
-      class="fixed top-0 right-0 z-40 w-full bg-gray-900 shadow-sm transition-all duration-300 ease-in-out"
+      class="fixed top-0 right-0 z-40 w-full bg-gray-700 shadow-sm transition-all duration-300 ease-in-out"
       :class="{
         'lg:w-[calc(100%-16rem)] xl:w-[calc(100%-18rem)] 2xl:w-[calc(100%-20rem)]': sidebarOpen,
         'lg:w-full': !sidebarOpen
@@ -92,3 +92,56 @@
 </template>
 <script setup>
 </script>
+<style scoped>
+/* Transition Effects */
+.dropdown-enter-active,
+.dropdown-leave-active {
+  transition: all 0.2s ease;
+}
+
+.dropdown-enter-from,
+.dropdown-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Better UX on large screens */
+@media (min-width: 2560px) {
+  .app-container {
+    max-width: 2560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Prevent content from stretching too wide on large screens */
+main {
+  min-height: calc(100vh - 64px);
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Prevent USSD emulator from overscaling on larger screens */
+@media (min-width: 1536px) {
+  .phone-container {
+    transform-origin: top center;
+    margin: 0 auto;
+  }
+}
+</style>

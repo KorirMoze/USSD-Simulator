@@ -119,6 +119,8 @@ import { ref, onMounted } from "vue";
 
 const userInput = ref("");
 const sessionOutput = ref("");
+const windowWidth = ref(0); // default to 0
+
 const buttons = [
   { label: "1", sub: "✉️" },
   { label: "2", sub: "ABC" },
@@ -164,7 +166,103 @@ const sendRequest = async () => {
     sessionOutput.value = `Request failed: ${error.message}`;
   }
 };
+
+// Close user menu when clicking outside
+const handleClickOutside = (event) => {
+  const userMenuButton = document.querySelector("button");
+  const userMenu = document.querySelector(".dropdown");
+
+  if (
+    userMenuOpen.value &&
+    userMenuButton &&
+    userMenu &&
+    !userMenuButton.contains(event.target) &&
+    !userMenu.contains(event.target)
+  ) {
+    userMenuOpen.value = false;
+  }
+};
+// Update window width on resize
+const handleResize = () => {
+  windowWidth.value = window.innerWidth;
+
+  if (windowWidth.value < 1024) {
+    if (sidebarOpen.value) sidebarOpen.value = false;
+    if (userMenuOpen.value) userMenuOpen.value = false;
+  }
+};
 const remove = () => {
   userInput.value = userInput.value.slice(0, -1);
 };
+
+// Lifecycle hooks
+onMounted(() => {
+  windowWidth.value = window.innerWidth; // ← safe here
+  document.addEventListener("click", handleClickOutside);
+  window.addEventListener("resize", handleResize);
+
+  if (windowWidth.value < 1024) {
+    sidebarOpen.value = false;
+  }
+});
+
+onUnmounted(() => {
+  document.removeEventListener("click", handleClickOutside);
+  window.removeEventListener("resize", handleResize);
+  document.body.style.overflow = "";
+});
+
 </script>
+<style scoped>
+/* Transition Effects */
+.dropdown-enter-active,
+.dropdown-leave-active {
+  transition: all 0.2s ease;
+}
+
+.dropdown-enter-from,
+.dropdown-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Better UX on large screens */
+@media (min-width: 2560px) {
+  .app-container {
+    max-width: 2560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Prevent content from stretching too wide on large screens */
+main {
+  min-height: calc(100vh - 64px);
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Prevent USSD emulator from overscaling on larger screens */
+@media (min-width: 1536px) {
+  .phone-container {
+    transform-origin: top center;
+    margin: 0 auto;
+  }
+}
+</style>
