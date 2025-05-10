@@ -6,18 +6,20 @@
       <Navbar />
     </div>
     <!-- Main Content -->
-    <main 
+    <main
       class="transition-all duration-300 ease-in-out pt-16"
       :class="{
         'lg:ml-64 xl:ml-72 2xl:ml-80': sidebarOpen,
-        'ml-0': !sidebarOpen
+        'ml-0': !sidebarOpen,
       }"
     >
       <div class="px-4 py-6 lg:px-6 xl:px-8 2xl:px-10 max-w-7xl mx-auto">
         <!-- Content Header -->
         <div class="mb-6">
           <h1 class="text-2xl font-bold text-gray-900">USSD Simulator</h1>
-          <p class="text-gray-500 mt-1">Test your USSD flows with this interactive simulator.</p>
+          <p class="text-gray-500 mt-1">
+            Test your USSD flows with this interactive simulator.
+          </p>
         </div>
 
         <!-- Main Content Grid -->
@@ -32,9 +34,15 @@
               <div class="p-4 space-y-4">
                 <!-- USSD Code Input -->
                 <div>
-                  <label for="ussd-code" class="block text-sm font-medium text-gray-700 mb-1">USSD Code</label>
+                  <label
+                    for="ussd-code"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >USSD Code</label
+                  >
                   <div class="mt-1 relative rounded-md shadow-sm">
-                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
                       <span class="text-gray-500 sm:text-sm">*</span>
                     </div>
                     <input
@@ -43,15 +51,21 @@
                       class="focus:ring-purple-500 focus:border-purple-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
                       placeholder="123*1#"
                     />
-                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                    <div
+                      class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none"
+                    >
                       <span class="text-gray-500 sm:text-sm">#</span>
                     </div>
                   </div>
                 </div>
-                
+
                 <!-- Phone Number Input -->
                 <div>
-                  <label for="phone-number" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                  <label
+                    for="phone-number"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Phone Number</label
+                  >
                   <input
                     type="text"
                     id="phone-number"
@@ -59,10 +73,14 @@
                     placeholder="+1234567890"
                   />
                 </div>
-                
+
                 <!-- Network Select -->
                 <div>
-                  <label for="network" class="block text-sm font-medium text-gray-700 mb-1">Network</label>
+                  <label
+                    for="network"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Network</label
+                  >
                   <select
                     id="network"
                     class="focus:ring-purple-500 focus:border-purple-500 block w-full sm:text-sm border-gray-300 rounded-md"
@@ -73,10 +91,14 @@
                     <option>T-Mobile</option>
                   </select>
                 </div>
-                
+
                 <!-- API Endpoint Input -->
                 <div>
-                  <label for="api-endpoint" class="block text-sm font-medium text-gray-700 mb-1">API Endpoint</label>
+                  <label
+                    for="api-endpoint"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >API Endpoint</label
+                  >
                   <input
                     type="text"
                     id="api-endpoint"
@@ -84,7 +106,7 @@
                     placeholder="https://api.example.com/ussd"
                   />
                 </div>
-                
+
                 <!-- Buttons -->
                 <div class="flex space-x-3 pt-2">
                   <button
@@ -102,39 +124,50 @@
                 </div>
               </div>
             </div>
-            
+
             <!-- History Section -->
             <div class="bg-white rounded-lg shadow-sm border border-gray-200">
-              <div class="px-4 py-3 border-b border-gray-200 flex justify-between items-center">
+              <div
+                class="px-4 py-3 border-b border-gray-200 flex justify-between items-center"
+              >
                 <h2 class="font-semibold text-lg">Session History</h2>
-                <button class="text-sm text-purple-600 hover:text-purple-800">Clear All</button>
+                <button class="text-sm text-purple-600 hover:text-purple-800">
+                  Clear All
+                </button>
               </div>
               <div class="p-4">
-                <div class="overflow-hidden bg-gray-50 border border-gray-200 rounded-md">
+                <div
+                  class="overflow-hidden bg-gray-50 border border-gray-200 rounded-md"
+                >
                   <div class="px-4 py-2 border-b border-gray-200 bg-gray-100">
                     <div class="flex justify-between items-center">
-                      <span class="text-sm font-medium text-gray-600">*123*1#</span>
+                      <span class="text-sm font-medium text-gray-600"
+                        >*123*1#</span
+                      >
                       <span class="text-xs text-gray-500">10:25 AM</span>
                     </div>
                   </div>
                   <div class="p-4 space-y-4">
                     <div class="space-y-2">
-                      <div class="bg-gray-200 rounded-lg p-3 text-sm inline-block max-w-[80%]">
+                      <div
+                        class="bg-gray-200 rounded-lg p-3 text-sm inline-block max-w-[80%]"
+                      >
                         Welcome to Mobile Banking
-                        <br>1. Check Balance
-                        <br>2. Send Money
-                        <br>3. Buy Airtime
-                        <br>4. Pay Bills
+                        <br />1. Check Balance <br />2. Send Money <br />3. Buy
+                        Airtime <br />4. Pay Bills
                       </div>
                       <div class="flex justify-between items-center">
-                        <div class="bg-purple-100 rounded-lg p-3 text-sm inline-block max-w-[80%] ml-auto">
+                        <div
+                          class="bg-purple-100 rounded-lg p-3 text-sm inline-block max-w-[80%] ml-auto"
+                        >
                           1
                         </div>
                       </div>
-                      <div class="bg-gray-200 rounded-lg p-3 text-sm inline-block max-w-[80%]">
+                      <div
+                        class="bg-gray-200 rounded-lg p-3 text-sm inline-block max-w-[80%]"
+                      >
                         Your current balance is $1,245.67
-                        <br>0. Back to Main Menu
-                        <br>9. Exit
+                        <br />0. Back to Main Menu <br />9. Exit
                       </div>
                     </div>
                   </div>
@@ -142,18 +175,36 @@
               </div>
             </div>
           </div>
-          
+
           <!-- Right Column (2/5) - Mobile Emulator -->
-          <div class="lg:col-span-2">
+          <div class="lg:col-span-2 border-gray-900 shadow-2xl rounded-lg pt-8">
             <!-- Phone Emulator -->
-            <div class="bg-gray-800 rounded-3xl shadow-lg overflow-hidden max-w-xs mx-auto">
+            <div
+              class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-3xl border border-gray-700 shadow-2xl ring-1 ring-gray-600 overflow-hidden max-w-xs mx-auto p-1"
+            >
               <!-- Phone Top Bar -->
-              <div class="bg-black text-white px-6 py-2 flex justify-between items-center">
+              <div
+                class="bg-black text-white px-6 py-2 flex justify-between items-center"
+              >
                 <span class="text-xs">10:30</span>
-                <div class="w-16 h-6 bg-black rounded-full mx-auto relative flex items-center">
-                  <div class="w-2 h-2 bg-gray-600 rounded-full absolute left-1.5"></div>
-                  <div class="w-12 h-1 bg-gray-600 rounded-full absolute left-4"></div>
+                <div
+                  class="w-16 h-6 bg-black rounded-full mx-auto relative flex items-center"
+                >
+                  <div
+                    class="w-2 h-2 bg-gray-600 rounded-full absolute left-1.5"
+                  ></div>
+                  <div
+                    class="w-12 h-1 bg-gray-600 rounded-full absolute left-4"
+                  ></div>
                 </div>
+                <!-- Network Signal Bars -->
+                <div class="flex gap-[2px]">
+                  <div class="w-1 h-1 bg-white rounded-sm"></div>
+                  <div class="w-1 h-2 bg-white rounded-sm"></div>
+                  <div class="w-1 h-3 bg-white rounded-sm"></div>
+                  <div class="w-1 h-4 bg-white rounded-sm"></div>
+                </div>
+
                 <div class="flex space-x-1">
                   <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 18v-6m0 0V6m0 6h6m-6 0H6"></path>
@@ -163,57 +214,82 @@
                   </svg>
                 </div>
               </div>
-              
+
               <!-- Phone Screen -->
               <div class="bg-gray-100 p-4 h-96 flex flex-col">
                 <!-- Screen Header -->
                 <div class="bg-gray-200 p-2 text-center rounded-t-lg">
                   <span class="text-sm font-semibold">USSD</span>
                 </div>
-                
+
                 <!-- Screen Content -->
-                <div class="flex-1 bg-white p-4 text-center flex flex-col justify-between">
+                <div
+                  class="flex-1 bg-white p-4 text-center flex flex-col justify-between"
+                >
                   <div class="text-left flex-1">
-                    <p class="text-sm font-medium mb-2">Welcome to Mobile Banking</p>
-                    <p class="text-sm">1. Check Balance</p>
-                    <p class="text-sm">2. Send Money</p>
-                    <p class="text-sm">3. Buy Airtime</p>
-                    <p class="text-sm">4. Pay Bills</p>
+                    <p class="text-sm font-medium mb-2">
+                      Welcome to Mobile Banking
+                    </p>
+                    <div v-if="sessionOutput">{{ sessionOutput }}</div>
+
+                    {{ userInput }}
                   </div>
-                  
-                  <!-- Input Field -->
-                  <div>
-                    <input
-                      type="text"
-                      class="w-full border border-gray-400 p-2 text-center text-sm rounded"
-                      placeholder="Enter response"
-                    />
-                  </div>
-                </div>
-                
-                <!-- Screen Footer -->
-                <div class="bg-gray-200 p-2 flex justify-between items-center rounded-b-lg">
-                  <button class="px-3 py-1 bg-red-500 text-white text-xs rounded">Cancel</button>
-                  <button class="px-3 py-1 bg-green-500 text-white text-xs rounded">Send</button>
                 </div>
               </div>
-              
-              <!-- Phone Keypad -->
+
+              <!-- Dial Pad -->
               <div class="bg-gray-700 p-4 grid grid-cols-3 gap-2">
-                <button class="bg-gray-600 text-white p-2 rounded text-center">1</button>
-                <button class="bg-gray-600 text-white p-2 rounded text-center">2</button>
-                <button class="bg-gray-600 text-white p-2 rounded text-center">3</button>
-                <button class="bg-gray-600 text-white p-2 rounded text-center">4</button>
-                <button class="bg-gray-600 text-white p-2 rounded text-center">5</button>
-                <button class="bg-gray-600 text-white p-2 rounded text-center">6</button>
-                <button class="bg-gray-600 text-white p-2 rounded text-center">7</button>
-                <button class="bg-gray-600 text-white p-2 rounded text-center">8</button>
-                <button class="bg-gray-600 text-white p-2 rounded text-center">9</button>
-                <button class="bg-gray-600 text-white p-2 rounded text-center">*</button>
-                <button class="bg-gray-600 text-white p-2 rounded text-center">0</button>
-                <button class="bg-gray-600 text-white p-2 rounded text-center">#</button>
+                <div
+                  v-for="btn in buttons"
+                  :key="btn.label"
+                  @click="append(btn.label)"
+                  class="cursor-pointer text-white text-center"
+                >
+                  <div>{{ btn.label }}</div>
+                  <div class="text-xs font-light text-grey-300">
+                    {{ btn.sub }}
+                  </div>
+                </div>
               </div>
-              
+              <!-- Action Buttons -->
+              <div class="flex justify-between items-center mt-2 pr-4 pl-4">
+                <button class="text-purple-300 opacity-50">
+                  <!-- Video call icon (disabled) -->
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M17 10.5V6c0-1.1-.9-2-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10c1.1 0 2-.9 2-2v-4.5l4 4v-11l-4 4z"
+                    />
+                  </svg>
+                </button>
+
+                <button
+                  @click="sendRequest"
+                  class="bg-purple-500 p-2 rounded-full hover:bg-purple-600 transition-colors"
+                >
+                  <!-- Call Button -->
+                  <svg
+                    class="w-4 h-4 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.21 11.36 11.36 0 0 0 3.58.57 1 1 0 0 1 1 1v3.59a1 1 0 0 1-1 1A16 16 0 0 1 3 5a1 1 0 0 1 1-1h3.6a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.58 1 1 0 0 1-.21 1.11z"
+                    />
+                  </svg>
+                </button>
+
+                <button
+                  @click="remove"
+                  class="text-white hover:text-purple-300 transition-colors"
+                >
+                  <!-- Backspace -->
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M22 6H12l-1.41 1.41L8.17 10l2.42 2.59L12 14h10V6zm-3 5l-1.41 1.41L16.17 11l1.42-1.41L19 11z"
+                    />
+                  </svg>
+                </button>
+              </div>
               <!-- Phone Bottom Bar -->
               <div class="bg-black px-4 py-2 flex justify-center">
                 <div class="w-24 h-1 bg-gray-600 rounded-full"></div>
@@ -227,26 +303,49 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, onUnmounted } from 'vue'
-import Sidebar from '../layouts/sideBar.vue'
-import Navbar from '../layouts/Navbar.vue'
+import { ref, watch, onMounted, onUnmounted } from "vue";
+import Sidebar from "../layouts/sideBar.vue";
+import Navbar from "../layouts/Navbar.vue";
 
 // State
-const sidebarOpen = ref(true)
-const userMenuOpen = ref(false)
-const windowWidth = ref(0) // default to 0
+const sidebarOpen = ref(true);
+const userMenuOpen = ref(false);
+const windowWidth = ref(0); // default to 0
+const userInput = ref("");
+const sessionOutput = ref("");
+const ussdCode = ref("");
+const phoneNumber = ref("");
+const network = ref("");
+const apiEndpoint = ref("");
 
+const buttons = [
+  { label: "1", sub: "✉️" },
+  { label: "2", sub: "ABC" },
+  { label: "3", sub: "DEF" },
+  { label: "4", sub: "GHI" },
+  { label: "5", sub: "JKL" },
+  { label: "6", sub: "MNO" },
+  { label: "7", sub: "PQRS" },
+  { label: "8", sub: "TUV" },
+  { label: "9", sub: "WXYZ" },
+  { label: "*", sub: "" },
+  { label: "0", sub: "+" },
+  { label: "#", sub: "" },
+];
 
+const append = (val) => {
+  userInput.value += val;
+};
 
 // Toggle user menu
 const toggleUserMenu = () => {
-  userMenuOpen.value = !userMenuOpen.value
-}
+  userMenuOpen.value = !userMenuOpen.value;
+};
 
 // Close user menu when clicking outside
 const handleClickOutside = (event) => {
-  const userMenuButton = document.querySelector('button')
-  const userMenu = document.querySelector('.dropdown')
+  const userMenuButton = document.querySelector("button");
+  const userMenu = document.querySelector(".dropdown");
 
   if (
     userMenuOpen.value &&
@@ -255,38 +354,68 @@ const handleClickOutside = (event) => {
     !userMenuButton.contains(event.target) &&
     !userMenu.contains(event.target)
   ) {
-    userMenuOpen.value = false
+    userMenuOpen.value = false;
   }
-}
+};
 
+const remove = () => {
+  userInput.value = userInput.value.slice(0, -1);
+};
 // Update window width on resize
 const handleResize = () => {
-  windowWidth.value = window.innerWidth
+  windowWidth.value = window.innerWidth;
 
   if (windowWidth.value < 1024) {
-    if (sidebarOpen.value) sidebarOpen.value = false
-    if (userMenuOpen.value) userMenuOpen.value = false
+    if (sidebarOpen.value) sidebarOpen.value = false;
+    if (userMenuOpen.value) userMenuOpen.value = false;
   }
-}
+};
 
 // Lifecycle hooks
 onMounted(() => {
-  windowWidth.value = window.innerWidth // ← safe here
-  document.addEventListener('click', handleClickOutside)
-  window.addEventListener('resize', handleResize)
+  windowWidth.value = window.innerWidth; // ← safe here
+  document.addEventListener("click", handleClickOutside);
+  window.addEventListener("resize", handleResize);
 
   if (windowWidth.value < 1024) {
-    sidebarOpen.value = false
+    sidebarOpen.value = false;
   }
-})
+});
 
 onUnmounted(() => {
-  document.removeEventListener('click', handleClickOutside)
-  window.removeEventListener('resize', handleResize)
-  document.body.style.overflow = ''
-})
-</script>
+  document.removeEventListener("click", handleClickOutside);
+  window.removeEventListener("resize", handleResize);
+  document.body.style.overflow = "";
+});
 
+const sendRequest = async () => {
+  if (!apiEndpoint.value || !ussdCode.value || !phoneNumber.value) {
+    sessionOutput.value = "Missing required fields.";
+    return;
+  }
+
+  try {
+    const response = await fetch(apiEndpoint.value, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ussdCode: ussdCode.value,
+        phoneNumber: phoneNumber.value,
+        network: network.value,
+        input: userInput.value,
+      }),
+    });
+
+    const data = await response.json();
+    sessionOutput.value = data.message || "No response received.";
+    userInput.value = "";
+  } catch (error) {
+    sessionOutput.value = `Request failed: ${error.message}`;
+  }
+};
+</script>
 
 <style scoped>
 /* Transition Effects */
