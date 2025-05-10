@@ -216,9 +216,9 @@
               </div>
 
               <!-- Phone Screen -->
-              <div class="bg-gray-100 p-4 h-96 flex flex-col">
+              <div class="bg-gray-100 p-2 h-96 flex flex-col">
                 <!-- Screen Header -->
-                <div class="bg-gray-200 p-2 text-center rounded-t-lg">
+                <div class="bg-gray-200  text-center rounded-t-lg">
                   <span class="text-sm font-semibold">USSD</span>
                 </div>
 
@@ -228,15 +228,18 @@
                 >
                   <div class="text-left flex-1">
                     <p class="text-sm font-medium mb-2">
-                      Welcome to Mobile Banking
+                      Welcome to USSD Simulator
                     </p>
                     <div v-if="sessionOutput">{{ sessionOutput }}</div>
 
                     {{ userInput }}
                   </div>
                 </div>
+      
+                                <div class="bg-gray-200 p-2 text-center rounded-t-lg">
+                  <span class="text-sm font-semibold">{{ userInput }}</span>
+                </div>
               </div>
-
               <!-- Dial Pad -->
               <div class="bg-gray-700 p-4 grid grid-cols-3 gap-2">
                 <div
