@@ -1,184 +1,10 @@
 <template>
   <div class="app-container">
-    <!-- Sidebar -->
-    <aside 
-      class="fixed top-0 left-0 h-full bg-gray-900 text-white transition-all duration-300 ease-in-out z-50"
-      :class="{ 'w-64 xl:w-72 2xl:w-80': sidebarOpen, 'w-0 -translate-x-full': !sidebarOpen }"
-    >
-      <!-- Sidebar Content -->
-      <div class="h-full flex flex-col">
-        <!-- Logo -->
-        <div class="flex items-center justify-between p-4 border-b border-gray-800">
-          <div class="flex items-center space-x-3">
-            <div class="w-8 h-8 bg-purple-600 rounded-md flex items-center justify-center">
-              <span class="text-white font-bold">U</span>
-            </div>
-            <h1 class="text-xl font-bold">USSD Tools</h1>
-          </div>
-          <button @click="toggleSidebar" class="p-2 text-gray-400 hover:text-white lg:hidden">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        
-        <!-- Navigation Links -->
-        <nav class="flex-1 pt-4 overflow-y-auto">
-          <div class="px-4 mb-4">
-            <h2 class="text-xs uppercase text-gray-500 font-medium tracking-wider">Main</h2>
-          </div>
-          <a href="#" class="block py-2 px-4 text-gray-300 hover:bg-gray-800 hover:text-white">
-            <div class="flex items-center space-x-3">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-              </svg>
-              <span>Dashboard</span>
-            </div>
-          </a>
-          <a href="#" class="block py-2 px-4 bg-gray-800 text-white">
-            <div class="flex items-center space-x-3">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-              </svg>
-              <span>USSD Simulator</span>
-            </div>
-          </a>
-          <a href="#" class="block py-2 px-4 text-gray-300 hover:bg-gray-800 hover:text-white">
-            <div class="flex items-center space-x-3">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
-              <span>Analytics</span>
-            </div>
-          </a>
-          
-          <div class="px-4 mb-4 mt-6">
-            <h2 class="text-xs uppercase text-gray-500 font-medium tracking-wider">Configuration</h2>
-          </div>
-          <a href="#" class="block py-2 px-4 text-gray-300 hover:bg-gray-800 hover:text-white">
-            <div class="flex items-center space-x-3">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              <span>Settings</span>
-            </div>
-          </a>
-          <a href="#" class="block py-2 px-4 text-gray-300 hover:bg-gray-800 hover:text-white">
-            <div class="flex items-center space-x-3">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-              </svg>
-              <span>API Configuration</span>
-            </div>
-          </a>
-        </nav>
-        
-        <!-- User Info -->
-        <div class="p-4 border-t border-gray-800">
-          <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center">
-              <span class="text-white font-semibold">AU</span>
-            </div>
-            <div>
-              <h3 class="text-sm font-medium">Admin User</h3>
-              <p class="text-xs text-gray-400">admin@example.com</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </aside>
+    <Sidebar />
 
-    <!-- Header -->
-    <header
-      class="fixed top-0 right-0 z-40 w-full bg-white shadow-sm transition-all duration-300 ease-in-out"
-      :class="{
-        'lg:w-[calc(100%-16rem)] xl:w-[calc(100%-18rem)] 2xl:w-[calc(100%-20rem)]': sidebarOpen,
-        'lg:w-full': !sidebarOpen
-      }"
-    >
-      <div class="w-full mx-auto flex items-center justify-between px-4 py-3 lg:px-6 xl:px-8 2xl:px-10">
-        <!-- Left Section - Hamburger Menu and Breadcrumbs -->
-        <div class="flex items-center space-x-2 lg:space-x-4">
-          <!-- Hamburger Menu (visible on mobile and when sidebar is closed on desktop) -->
-          <button
-            @click="toggleSidebar"
-            class="p-2 rounded-md text-gray-700 hover:bg-gray-100 lg:hidden"
-          >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-
-          <!-- Toggle Sidebar Button (visible only on desktop) -->
-          <button
-            @click="toggleSidebar"
-            class="hidden lg:block p-2 rounded-md text-gray-700 hover:bg-gray-100"
-          >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path v-if="sidebarOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
-              <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-            </svg>
-          </button>
-
-          <!-- Breadcrumbs -->
-          <div class="hidden md:flex items-center space-x-2 text-sm lg:text-base">
-            <span class="text-gray-500">Dashboard</span>
-            <span class="text-gray-300">/</span>
-            <span class="text-gray-700 font-medium">USSD Simulator</span>
-          </div>
-        </div>
-
-        <!-- Right Section -->
-        <div class="flex items-center space-x-2 lg:space-x-4">
-          <!-- Search Bar -->
-          <div class="relative hidden md:block">
-            <input
-              type="text"
-              placeholder="Search..."
-              class="pl-10 pr-4 py-2 w-64 lg:w-72 xl:w-80 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-            />
-            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
-          </div>
-
-          <!-- Notifications -->
-          <button class="p-2 rounded-full text-gray-600 hover:bg-gray-100 relative">
-            <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-            </svg>
-            <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
-          </button>
-
-          <!-- User Menu -->
-          <div class="relative">
-            <button @click="toggleUserMenu" class="flex items-center space-x-2 focus:outline-none">
-              <div class="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-purple-600 flex items-center justify-center">
-                <span class="text-white text-sm lg:text-base font-semibold">AU</span>
-              </div>
-              <span class="hidden md:inline-block text-sm lg:text-base font-medium text-gray-700">Admin User</span>
-              <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-
-            <!-- Dropdown Menu -->
-            <div
-              v-if="userMenuOpen"
-              class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 dropdown"
-            >
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Your Profile</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
+    <div class="mt-16 mb-">
+      <Navbar />
+    </div>
     <!-- Main Content -->
     <main 
       class="transition-all duration-300 ease-in-out pt-16"
@@ -402,23 +228,15 @@
 
 <script setup>
 import { ref, watch, onMounted, onUnmounted } from 'vue'
+import Sidebar from '../layouts/sideBar.vue'
+import Navbar from '../layouts/Navbar.vue'
 
 // State
 const sidebarOpen = ref(true)
 const userMenuOpen = ref(false)
-const windowWidth = ref(window.innerWidth)
+const windowWidth = ref(0) // default to 0
 
-// Toggle sidebar
-const toggleSidebar = () => {
-  sidebarOpen.value = !sidebarOpen.value
-  
-  // Automatically close sidebar on small screens
-  if (windowWidth.value < 1024 && sidebarOpen.value) {
-    document.body.style.overflow = 'hidden'  // Prevent scrolling when sidebar is open on mobile
-  } else {
-    document.body.style.overflow = ''
-  }
-}
+
 
 // Toggle user menu
 const toggleUserMenu = () => {
@@ -429,12 +247,14 @@ const toggleUserMenu = () => {
 const handleClickOutside = (event) => {
   const userMenuButton = document.querySelector('button')
   const userMenu = document.querySelector('.dropdown')
-  
-  if (userMenuOpen.value && 
-      userMenuButton && 
-      userMenu && 
-      !userMenuButton.contains(event.target) && 
-      !userMenu.contains(event.target)) {
+
+  if (
+    userMenuOpen.value &&
+    userMenuButton &&
+    userMenu &&
+    !userMenuButton.contains(event.target) &&
+    !userMenu.contains(event.target)
+  ) {
     userMenuOpen.value = false
   }
 }
@@ -442,24 +262,19 @@ const handleClickOutside = (event) => {
 // Update window width on resize
 const handleResize = () => {
   windowWidth.value = window.innerWidth
-  
-  // Auto-close sidebars/menus on small screens
+
   if (windowWidth.value < 1024) {
-    if (sidebarOpen.value) {
-      sidebarOpen.value = false
-    }
-    if (userMenuOpen.value) {
-      userMenuOpen.value = false
-    }
+    if (sidebarOpen.value) sidebarOpen.value = false
+    if (userMenuOpen.value) userMenuOpen.value = false
   }
 }
 
 // Lifecycle hooks
 onMounted(() => {
+  windowWidth.value = window.innerWidth // ← safe here
   document.addEventListener('click', handleClickOutside)
   window.addEventListener('resize', handleResize)
-  
-  // Initialize based on screen size
+
   if (windowWidth.value < 1024) {
     sidebarOpen.value = false
   }
@@ -471,6 +286,7 @@ onUnmounted(() => {
   document.body.style.overflow = ''
 })
 </script>
+
 
 <style scoped>
 /* Transition Effects */
