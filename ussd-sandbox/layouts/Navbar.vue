@@ -1,13 +1,13 @@
 <template>
      <!-- Header -->
     <header
-      class="fixed top-0 right-0 z-40 w-full bg-gray-700 shadow-sm transition-all duration-300 ease-in-out"
+      class="fixed top-0 right-0 z-40  bg-gray-700 shadow-sm transition-all duration-300 ease-in-out"
       :class="{
         'lg:w-[calc(100%-16rem)] xl:w-[calc(100%-18rem)] 2xl:w-[calc(100%-20rem)]': sidebarOpen,
         'lg:w-full': !sidebarOpen
       }"
     >
-      <div class="w-full mx-auto flex items-center justify-between px-4 py-3 lg:px-6 xl:px-8 2xl:px-10">
+      <div class="mx-auto flex items-center justify-between px-4 py-3 lg:px-6 xl:px-8 2xl:px-10">
         <!-- Left Section - Hamburger Menu and Breadcrumbs -->
         <div class="flex items-center space-x-2 lg:space-x-4">
           <!-- Hamburger Menu (visible on mobile and when sidebar is closed on desktop) -->

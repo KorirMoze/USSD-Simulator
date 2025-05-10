@@ -1,9 +1,8 @@
 <template>
-  <div class="app-container">
-    <Sidebar />
-
+  <div class="app-container flex-col">
+    <Navbar />
     <div class="mt-16 mb-">
-      <Navbar />
+      <Sidebar :isOpen="sidebarOpen" @toggle="toggleSidebar" />
     </div>
     <!-- Main Content -->
     <main

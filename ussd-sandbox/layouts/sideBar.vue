@@ -1,8 +1,8 @@
 <template>
       <!-- Sidebar -->
     <aside 
-      class="fixed top-0 left-0 h-full bg-gray-900 text-white transition-all duration-300 ease-in-out z-50"
-      :class="{ 'w-64 xl:w-72 2xl:w-80': sidebarOpen, 'w-0 -translate-x-full': !sidebarOpen }"
+      class="fixed  left-0 h-full bg-gray-900 text-white transition-all duration-300 ease-in-out z-50"
+      :class="{ 'w-48 xl:w-48 2xl:w-48': sidebarOpen, 'w-0 -translate-x-full': !sidebarOpen }"
     >
       <!-- Sidebar Content -->
       <div class="h-full flex flex-col">
@@ -130,14 +130,7 @@ const toggleSidebar = () => {
   transform: translateY(-10px);
 }
 
-/* Better UX on large screens */
-@media (min-width: 2560px) {
-  .app-container {
-    max-width: 2560px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
+
 
 /* Prevent content from stretching too wide on large screens */
 main {

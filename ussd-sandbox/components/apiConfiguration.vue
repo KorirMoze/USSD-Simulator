@@ -52,16 +52,15 @@
                   <label
                     for="network"
                     class="block text-sm font-medium text-gray-700 mb-1"
-                    >Network</label
+                    >Type</label
                   >
                   <select
                     id="network"
                     class="focus:ring-purple-500 focus:border-purple-500 block w-full sm:text-sm border-gray-300 rounded-md"
                   >
-                    <option>Vodafone</option>
-                    <option>MTN</option>
-                    <option>Airtel</option>
-                    <option>T-Mobile</option>
+                    <option>GET</option>
+                    <option>POST</option>
+
                   </select>
                 </div>
 
@@ -86,7 +85,7 @@
                     type="button"
                     class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
                   >
-                    Start Session
+                    Save Endpoint
                   </button>
                   <button
                     type="button"
@@ -99,3 +98,5 @@
             </div>
 
 </template>
+<script setup>
+</script>
