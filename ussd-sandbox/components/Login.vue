@@ -14,11 +14,21 @@ const config = useRuntimeConfig()
 function handleCredentialResponse(response) {
   const token = response.credential;
 
-  fetch('http://localhost:5000/api/auth/google-login', {
+  fetch('http://localhost:5054/api/auth/google-login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ token })
   })
+    .then(res => {
+      if(!res.ok) throw  new Error("Login Failed");
+      return res.text();
+    })
+    .then (jwt => {
+      console.log('LOGIN SUCCESFUL :::', jwt);
+      localStorage.setItem("token", jwt)
+
+      window.location.href = "/homepage"
+    })
     .then(res => res.json())
     .then(data => {
       console.log('Login successful:', data);
@@ -27,21 +37,7 @@ function handleCredentialResponse(response) {
     .catch(console.error);
 }
 
-function handleCredentialResponse(response) {
-  const token = response.credential;
 
-  fetch('http://localhost:5000/api/auth/google-login', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ token })
-  })
-    .then(res => res.json())
-    .then(data => {
-      console.log('Login successful:', data);
-      // Save token and redirect
-    })
-    .catch(console.error);
-}
 onMounted(() => {
   const script = document.createElement('script');
   script.src = 'https://accounts.google.com/gsi/client';
