@@ -8,5 +8,9 @@ export default defineNuxtConfig({
       googleClientId: process.env.GOOGLE_CLIENT_ID,
     },
   },
+    ssr: false,
+    nitro: {
+      preset: 'netlify' // explicitly target static output for Netlify
+    }
 
 })
