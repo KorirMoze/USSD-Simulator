@@ -13,5 +13,4 @@ export default defineNuxtConfig({
     nitro: {
       preset: 'netlify' // explicitly target static output for Netlify
     }
-
 })
