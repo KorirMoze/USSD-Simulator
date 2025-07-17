@@ -11,6 +11,6 @@ export default defineNuxtConfig({
     ssr: true, // important for SSR
 
     nitro: {
-      preset: 'netlify' // explicitly target static output for Netlify
+      preset: 'vercel' // explicitly target static output for Netlify
     }
 })
