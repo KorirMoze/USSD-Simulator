@@ -1,0 +1,4 @@
+const Navbar_vue_vue_type_style_index_0_scoped_ffdf10a5_lang = ".dropdown-enter-active[data-v-ffdf10a5],.dropdown-leave-active[data-v-ffdf10a5]{transition:all .2s ease}.dropdown-enter-from[data-v-ffdf10a5],.dropdown-leave-to[data-v-ffdf10a5]{opacity:0;transform:translateY(-10px)}@media (min-width:2560px){.app-container[data-v-ffdf10a5]{margin-left:auto;margin-right:auto;max-width:2560px}}main[data-v-ffdf10a5]{min-height:calc(100vh - 64px)}[data-v-ffdf10a5]::-webkit-scrollbar{width:8px}[data-v-ffdf10a5]::-webkit-scrollbar-track{background:#f1f1f1}[data-v-ffdf10a5]::-webkit-scrollbar-thumb{background:#d1d5db;border-radius:4px}[data-v-ffdf10a5]::-webkit-scrollbar-thumb:hover{background:#9ca3af}@media (min-width:1536px){.phone-container[data-v-ffdf10a5]{margin:0 auto;transform-origin:top center}}";
+
+export { Navbar_vue_vue_type_style_index_0_scoped_ffdf10a5_lang as N };
+//# sourceMappingURL=Navbar-styles-1.mjs-BYyvNBwy.mjs.map

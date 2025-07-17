@@ -1,0 +1,4 @@
+const sideBar_vue_vue_type_style_index_0_scoped_c5bd1b67_lang = ".dropdown-enter-active[data-v-c5bd1b67],.dropdown-leave-active[data-v-c5bd1b67]{transition:all .2s ease}.dropdown-enter-from[data-v-c5bd1b67],.dropdown-leave-to[data-v-c5bd1b67]{opacity:0;transform:translateY(-10px)}main[data-v-c5bd1b67]{min-height:calc(100vh - 64px)}[data-v-c5bd1b67]::-webkit-scrollbar{width:8px}[data-v-c5bd1b67]::-webkit-scrollbar-track{background:#f1f1f1}[data-v-c5bd1b67]::-webkit-scrollbar-thumb{background:#d1d5db;border-radius:4px}[data-v-c5bd1b67]::-webkit-scrollbar-thumb:hover{background:#9ca3af}@media (min-width:1536px){.phone-container[data-v-c5bd1b67]{margin:0 auto;transform-origin:top center}}";
+
+export { sideBar_vue_vue_type_style_index_0_scoped_c5bd1b67_lang as s };
+//# sourceMappingURL=sideBar-styles-1.mjs-D8BWnDjh.mjs.map

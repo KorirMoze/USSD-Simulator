@@ -1,0 +1,4 @@
+const phoneSimulator_vue_vue_type_style_index_0_scoped_2afb0ce3_lang = ".dropdown-enter-active[data-v-2afb0ce3],.dropdown-leave-active[data-v-2afb0ce3]{transition:all .2s ease}.dropdown-enter-from[data-v-2afb0ce3],.dropdown-leave-to[data-v-2afb0ce3]{opacity:0;transform:translateY(-10px)}@media (min-width:2560px){.app-container[data-v-2afb0ce3]{margin-left:auto;margin-right:auto;max-width:2560px}}main[data-v-2afb0ce3]{min-height:calc(100vh - 64px)}[data-v-2afb0ce3]::-webkit-scrollbar{width:8px}[data-v-2afb0ce3]::-webkit-scrollbar-track{background:#f1f1f1}[data-v-2afb0ce3]::-webkit-scrollbar-thumb{background:#d1d5db;border-radius:4px}[data-v-2afb0ce3]::-webkit-scrollbar-thumb:hover{background:#9ca3af}@media (min-width:1536px){.phone-container[data-v-2afb0ce3]{margin:0 auto;transform-origin:top center}}";
+
+export { phoneSimulator_vue_vue_type_style_index_0_scoped_2afb0ce3_lang as p };
+//# sourceMappingURL=phoneSimulator-styles-1.mjs-yf5AU0R1.mjs.map
