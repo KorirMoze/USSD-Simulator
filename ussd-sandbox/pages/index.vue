@@ -1,6 +1,6 @@
 <template>
     <div class="p-6">
-      <Login />
+      <MainPage />
     </div>
   </template>
 <script  setup>
